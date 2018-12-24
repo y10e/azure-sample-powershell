@@ -9,7 +9,7 @@ Select-AzureRmSubscription  $srcSub.SubscriptionId
 #移行ディスクを選択
 $srcDisk =  Get-AzureRmDisk | Out-GridView -Title "Select Your Managed Disk  ..." -PassThru
 $snapshotConfig =  New-AzureRmSnapshotConfig -SourceUri $srcDisk.Id -CreateOption Copy -Location $srcDisk.Location
-$snapshot = New-AzureRmSnapshot -Snapshot $snapshot -SnapshotName "snapshot" -ResourceGroupName $srcDisk.ResourceGroupName 
+$snapshot = New-AzureRmSnapshot -Snapshot $snapshotConfig -SnapshotName "snapshot" -ResourceGroupName $srcDisk.ResourceGroupName 
 
 #移行先サブスクリプションの選択
 $dstSub = Get-AzureRmSubscription | Out-GridView -Title "Select Your Azure Subscription ..." -PassThru
