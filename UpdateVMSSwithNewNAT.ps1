@@ -1,7 +1,7 @@
 ﻿#Parameter
-$resourceGroupName = "tasatoRG06-VMSS"
-$vmssName = "tasatoVmss06aW"
-$newinboundnatpool = "/subscriptions/fb3f4c66-13aa-40db-8069-a39604581398/resourceGroups/tasatoRG06-VMSS/providers/Microsoft.Network/loadBalancers/tasatoVmss06aWlb/inboundNatPools/NewInboundNatRule"
+$resourceGroupName = "<TargetRG>"
+$vmssName = "<TargetVMSS>"
+$newinboundnatpool = "/subscriptions/xxxx/resourceGroups/xxxxx/providers/Microsoft.Network/loadBalancers/xxxxx/inboundNatPools/xxxxxxxxx"
 
 #Update VMSS Network Config
 $targetVmss = Get-AzureRmVmss -ResourceGroupName $resourceGroupName -VMScaleSetName $vmssName
